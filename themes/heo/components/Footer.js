@@ -39,7 +39,7 @@ const Footer = ({ title }) => {
           .
         </div>
 
-        <div id='footer-bottom-right flex'>
+        <div id='footer-bottom-right' className="flex">
           {siteConfig('BEI_AN') && (
             <>
               <i className='fas fa-shield-alt' />{' '}
