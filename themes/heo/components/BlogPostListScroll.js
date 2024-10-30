@@ -59,7 +59,7 @@ const BlogPostListScroll = ({
   })
 
   const targetRef = useRef(null)
-  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', true, CONFIG)
+  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', false, CONFIG)
   if (!postsToShow || postsToShow.length === 0) {
     return <BlogPostListEmpty currentSearch={currentSearch} />
   } else {
@@ -85,7 +85,7 @@ const BlogPostListScroll = ({
             onClick={() => {
               handleGetMore()
             }}
-            className='w-full my-4 py-4 text-center cursor-pointer rounded-xl dark:text-gray-200'>
+            className='w-full py-4 my-4 text-center cursor-pointer rounded-xl dark:text-gray-200'>
             {' '}
             {hasMore ? locale.COMMON.MORE : `${locale.COMMON.NO_MORE}`}{' '}
           </div>

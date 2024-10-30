@@ -20,7 +20,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
     post?.pageCoverThumbnail &&
     !showPreview
 
-  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', true, CONFIG)
+  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', false, CONFIG)
   const COVER_HOVER_ENLARGE = siteConfig(
     'HEO_POST_LIST_COVER_HOVER_ENLARGE',
     true,
@@ -48,7 +48,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
                 alt={post?.title}
-                className='h-full w-full object-cover group-hover:scale-105 group-hover:brightness-75 transition-all duration-500 ease-in-out' //宽高都调整为自适应,保证封面居中
+                className='object-cover w-full h-full transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-75' //宽高都调整为自适应,保证封面居中
               />
             </div>
           </Link>
@@ -68,7 +68,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                 <Link
                   passHref
                   href={`/category/${post.category}`}
-                  className='cursor-pointer text-xs font-normal menu-link '>
+                  className='text-xs font-normal cursor-pointer menu-link '>
                   {post.category}
                 </Link>
               </div>
@@ -93,12 +93,12 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
 
           {/* 摘要 */}
           {(!showPreview || showSummary) && (
-            <main className='line-clamp-2 replace text-gray-700  dark:text-gray-300 text-sm font-light leading-tight'>
+            <main className='text-sm font-light leading-tight text-gray-700 line-clamp-2 replace dark:text-gray-300'>
               {post.summary}
             </main>
           )}
 
-          <div className='md:flex-nowrap flex-wrap md:justify-start inline-block'>
+          <div className='flex-wrap inline-block md:flex-nowrap md:justify-start'>
             <div>
               {' '}
               {post.tagItems?.map(tag => (

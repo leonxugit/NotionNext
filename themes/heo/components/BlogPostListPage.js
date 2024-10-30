@@ -18,7 +18,7 @@ const BlogPostListPage = ({ page = 1, posts = [], postCount, siteInfo }) => {
   const POSTS_PER_PAGE = siteConfig('POSTS_PER_PAGE', 12, NOTION_CONFIG)
   const totalPage = Math.ceil(postCount / POSTS_PER_PAGE)
   const showPagination = postCount >= POSTS_PER_PAGE
-  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', true, CONFIG)
+  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', false, CONFIG)
   if (!posts || posts.length === 0 || page > totalPage) {
     return <BlogPostListEmpty />
   } else {
