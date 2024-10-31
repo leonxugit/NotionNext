@@ -22,9 +22,9 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
 
   return (
     <>
-      <div className=' mb-2 px-1 flex flex-nowrap justify-between'>
+      <div className='flex justify-between px-1 mb-2  flex-nowrap'>
         <div>
-          <i className='mr-2 fas fas fa-history' />
+          <i className='mr-2 fas fa-history' />
           {locale.COMMON.LATEST_POSTS}
         </div>
       </div>
@@ -42,7 +42,7 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
             href={post?.href}
             passHref
             className={'my-3 flex'}>
-            <div className='w-20 h-14 overflow-hidden relative'>
+            <div className='relative w-20 overflow-hidden h-14'>
               <LazyImage
                 src={`${headerImage}`}
                 className='object-cover w-full h-full rounded-lg'
@@ -56,7 +56,9 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
               }>
               <div>
                 <div className='line-clamp-2 menu-link'>{post.title}</div>
-                <div className='text-gray-400'>{post.lastEditedDay}</div>
+                <div className='text-gray-400'>
+                  {post?.publishDay || post.lastEditedDay}
+                </div>
               </div>
             </div>
           </Link>
