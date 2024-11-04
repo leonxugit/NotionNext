@@ -46,7 +46,9 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                   <div>
                     <Link href={post?.href} passHref legacyBehavior>
                       <LazyImage
-                        className={'rounded-xl bg-center bg-cover w-40 h-24'}
+                        className={
+                          'rounded-xl bg-center bg-cover w-min-200px h-24'
+                        }
                         src={post?.pageCoverThumbnail}
                       />
                     </Link>
@@ -63,7 +65,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                         <Link
                           passHref
                           href={`/category/${post.category}`}
-                          className='cursor-pointer text-xs font-normal menu-link hover:text-indigo-700  dark:text-gray-600 transform'>
+                          className='text-xs font-normal transform cursor-pointer menu-link hover:text-indigo-700 dark:text-gray-600'>
                           {post.category}
                         </Link>
                       </div>
@@ -81,11 +83,11 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                   </div>
 
                   {/* 摘要 */}
-                  {/* <p className="line-clamp-1 replace my-3 2xl:my-0 text-gray-700  dark:text-gray-300 text-xs font-light leading-tight">
+                  {/* <p className="my-3 text-xs font-light leading-tight text-gray-700 line-clamp-1 replace 2xl:my-0 dark:text-gray-300">
                                         {post.summary}
                                     </p> */}
 
-                  <div className='md:flex-nowrap flex-wrap md:justify-start inline-block'>
+                  <div className='flex-wrap inline-block md:flex-nowrap md:justify-start'>
                     <div>
                       {' '}
                       {post.tagItems?.map(tag => (
